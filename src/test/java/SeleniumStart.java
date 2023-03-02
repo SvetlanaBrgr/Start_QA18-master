@@ -30,20 +30,35 @@ public class SeleniumStart {
         WebElement form = wd.findElement(By.tagName("form"));
         List<WebElement> elements = wd.findElements(By.tagName("a"));
         System.out.println(elements.size());
-
         WebElement root = wd.findElement(By.id("root"));
-        wd.findElement(By.className("navbar-component_nav__1X_4m"));
-        wd.findElement(By.linkText("Registration"));
-        wd.findElement(By.name("password"));
-        wd.findElement(By.partialLinkText("LOG"));
+        WebElement clName = wd.findElement(By.className("navbar-component_nav__1X_4m"));
 
+//--------------------HW_6___CSS______
+
+        WebElement rootcss = wd.findElement(By.cssSelector("#root"));
+        WebElement element4 = wd.findElement(By.cssSelector("[name= 'login']"));
+            WebElement element5 = wd.findElement(By.cssSelector("[class='navbar-component_nav__1X_4m']"));
+            WebElement element6 = wd.findElement(By.cssSelector(".login_login__3EHKB"));
+        WebElement current = wd.findElement(By.cssSelector("[aria-current='page']"));
+        WebElement element7 = wd.findElement(By.cssSelector("[name = 'email']"));
+
+//--------------------HW_7---xPath-------------------
+
+        WebElement element10 = wd.findElement(By.xpath("//*[@class='navbar-component_nav__1X_4m']"));
+        WebElement element11 = wd.findElement(By.xpath("//div/a"));
+        wd.findElement(By.xpath("//a[text()='LOGIN']"));
+        wd.findElement(By.xpath("//a[@class = 'active']"));
+        WebElement root1 = wd.findElement(By.xpath("//div[@id ='root']"));
+
+        WebElement password = wd.findElement(By.xpath("//input[@name='password']"));
+        WebElement email = wd.findElement(By.xpath("//input [@name='email']"));
+        WebElement element16 = wd.findElement(By.xpath("//*[@aria-current='page']"));
+        WebElement elbut = wd.findElement(By.xpath("//button [@type ='submit']"));
 
     }
-
-
-    @AfterMethod
+                 @AfterMethod
     public void postCondition() {
 //    wd.close();
-    wd.quit();
+//   wd.quit();
     }
 }
